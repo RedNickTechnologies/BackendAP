@@ -44,6 +44,7 @@ public class PersonaController {
     {
         
         persona.setId(id);
+        
     
     ipersonaService.savePersona(persona);
     return persona;
@@ -52,6 +53,11 @@ public class PersonaController {
     @GetMapping(path = {"/personas/{id}"})
     public Persona findPersona(@PathVariable("id")int id){
         return ipersonaService.findPersona(id);
+    }
+    
+     @GetMapping("/personas/traer/perfil")
+     public Persona findPersona(){
+         return ipersonaService.findPersona(1);
     }
     
     
