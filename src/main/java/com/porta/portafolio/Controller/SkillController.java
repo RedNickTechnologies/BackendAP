@@ -27,19 +27,19 @@ public class SkillController {
      return iskillService.getSkill();
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/skills/crear")
     public void createSkill(@RequestBody Skill skill){
         iskillService.saveSkill(skill);
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/skills/borrar/{id}")
     public void deleteSkill (@PathVariable Integer id){
         iskillService.deleteSkill(id);
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/skills/editar/{id}")
     public Skill editSkill(@PathVariable("id") Integer id,
                               @RequestBody Skill skill)

@@ -27,19 +27,19 @@ public class ContactoController {
      return icontactoService.getContacto();   
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/contactos/crear")
     public void createContacto(@RequestBody Contacto contacto){
         icontactoService.saveContacto(contacto);
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/contactos/borrar/{id}")
     public void deleteContacto (@PathVariable Integer id){
         icontactoService.deleteContacto(id);
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/contactos/editar/{id}")
     public Contacto editContacto(@PathVariable ("id") Integer id,
                               @RequestBody Contacto contacto)

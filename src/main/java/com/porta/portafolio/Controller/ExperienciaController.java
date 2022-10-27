@@ -27,19 +27,19 @@ public class ExperienciaController {
      return iexperienciaService.getExperiencia();   
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/experiencias/crear")
     public void createExperiencia(@RequestBody Experiencia experiencia){
         iexperienciaService.saveExperiencia(experiencia);
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/experiencias/borrar/{id}")
     public void deleteExperiencia (@PathVariable Integer id){
         iexperienciaService.deleteExperiencia(id);
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/experiencias/editar/{id}")
     public Experiencia editExperiencia(@PathVariable("id") Integer id,
                               @RequestBody Experiencia experiencia)
