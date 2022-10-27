@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="https://nickacevedoportafolio.web.app")
 public class ExperienciaController {
     @Autowired
     IExperienciaService iexperienciaService;

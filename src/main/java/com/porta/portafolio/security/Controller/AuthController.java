@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("https://nickacevedoportafolio.web.app/auth")
 @CrossOrigin
 public class AuthController {
 
