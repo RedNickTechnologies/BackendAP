@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin (origins= "https://nickacevedoportafolio.web.app")
+@CrossOrigin (origins= "https://nickacevedoportafolio.web.app/")
 
 public class SkillController {
     @Autowired
@@ -28,19 +28,19 @@ public class SkillController {
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/skills/crear")
+    @PostMapping("skills/crear")
     public void createSkill(@RequestBody Skill skill){
         iskillService.saveSkill(skill);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/skills/borrar/{id}")
+    @DeleteMapping("skills/borrar/{id}")
     public void deleteSkill (@PathVariable Integer id){
         iskillService.deleteSkill(id);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/skills/editar/{id}")
+    @PutMapping("skills/editar/{id}")
     public Skill editSkill(@PathVariable("id") Integer id,
                               @RequestBody Skill skill)
     {
@@ -51,7 +51,7 @@ public class SkillController {
     return skill;
     }
     
-    @GetMapping(path = {"/skills/{id}"})
+    @GetMapping(path = {"skills/{id}"})
     public Skill findSkill(@PathVariable("id")int id){
         return iskillService.findSkill(id);
     }

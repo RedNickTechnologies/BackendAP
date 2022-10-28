@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin (origins="https://nickacevedoportafolio.web.app")
+@CrossOrigin (origins="https://nickacevedoportafolio.web.app/")
 public class ContactoController {
     @Autowired
     IContactoService icontactoService;
@@ -28,19 +28,19 @@ public class ContactoController {
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/contactos/crear")
+    @PostMapping("contactos/crear")
     public void createContacto(@RequestBody Contacto contacto){
         icontactoService.saveContacto(contacto);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/contactos/borrar/{id}")
+    @DeleteMapping("contactos/borrar/{id}")
     public void deleteContacto (@PathVariable Integer id){
         icontactoService.deleteContacto(id);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/contactos/editar/{id}")
+    @PutMapping("contactos/editar/{id}")
     public Contacto editContacto(@PathVariable ("id") Integer id,
                               @RequestBody Contacto contacto)
     {
@@ -51,7 +51,7 @@ public class ContactoController {
     return contacto;
     }
     
-    @GetMapping(path = {"/contactos/{id}"})
+    @GetMapping(path = {"contactos/{id}"})
     public Contacto findContacto(@PathVariable ("id") int id){
         return icontactoService.findContacto(id);
     }

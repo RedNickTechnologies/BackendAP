@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "https://nickacevedoportafolio.web.app")
+@CrossOrigin(origins = "https://nickacevedoportafolio.web.app/")
 @RestController
 public class ProyectoController {
     @Autowired
@@ -27,19 +27,19 @@ public class ProyectoController {
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/proyectos/crear")
+    @PostMapping("proyectos/crear")
     public void createProyecto(@RequestBody Proyecto proyecto){
         iproyectoService.saveProyecto(proyecto);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/proyectos/borrar/{id}")
+    @DeleteMapping("proyectos/borrar/{id}")
     public void deleteProyecto (@PathVariable Integer id){
         iproyectoService.deleteProyecto(id);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/proyectos/editar/{id}")
+    @PutMapping("proyectos/editar/{id}")
     public Proyecto editProyecto(@PathVariable("id") Integer id,
                               @RequestBody Proyecto proyecto)
     {
@@ -50,7 +50,7 @@ public class ProyectoController {
     return proyecto;
     }
     
-    @GetMapping(path = {"/proyectos/{id}"})
+    @GetMapping(path = {"proyectos/{id}"})
     public Proyecto findProyecto(@PathVariable("id")int id){
         return iproyectoService.findProyecto(id);
     }

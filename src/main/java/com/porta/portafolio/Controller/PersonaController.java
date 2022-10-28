@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "https://nickacevedoportafolio.web.app")
+@CrossOrigin(origins = "https://nickacevedoportafolio.web.app/")
 @RestController
 
 public class PersonaController {
@@ -28,17 +28,17 @@ public class PersonaController {
      return ipersonaService.getPersona();   
     }
     //@PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/personas/crear")
+    @PostMapping("personas/crear")
     public void createPersona(@RequestBody Persona persona){
         ipersonaService.savePersona(persona);
     }
     //@PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/personas/borrar/{id}")
+    @DeleteMapping("personas/borrar/{id}")
     public void deletePersona (@PathVariable Integer id){
         ipersonaService.deletePersona(id);
     }
     //@PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/personas/editar/{id}")
+    @PutMapping("personas/editar/{id}")
     public Persona editPersona(@PathVariable("id") Integer id,
                               @RequestBody Persona persona)
     {
@@ -49,12 +49,12 @@ public class PersonaController {
     return persona;
     }
     
-    @GetMapping(path = {"/personas/{id}"})
+    @GetMapping(path = {"personas/{id}"})
     public Persona findPersona(@PathVariable("id")int id){
         return ipersonaService.findPersona(id);
     }
     
-       @GetMapping("/personas/traer/perfil")
+       @GetMapping("personas/traer/perfil")
     public Persona findPersona(){
         return ipersonaService.findPersona(1);
     }

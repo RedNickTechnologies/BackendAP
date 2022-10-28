@@ -22,7 +22,7 @@ public class EstudioController {
     @Autowired
     IEstudioService iestudioService;
     
-    @GetMapping("estudios/traer")
+    @GetMapping("/estudios/traer")
     public List<Estudio>getEstudio(){
      return iestudioService.getEstudio();   
     }
