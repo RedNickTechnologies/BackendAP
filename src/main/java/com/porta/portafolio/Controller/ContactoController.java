@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-//@CrossOrigin (origins="https://nickacevedoportafolio.web.app/")
-@CrossOrigin (origins="*")
+@CrossOrigin (origins="https://nickacevedoportafolio.web.app/")
+
 public class ContactoController {
     @Autowired
     IContactoService icontactoService;
